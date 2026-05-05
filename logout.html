@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>User Dashboard</title>+
+    <style>
+        /* Logout Page Styles */
+.logout-confirmation {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.logout-confirmation p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.logout-confirmation .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logout-btn, .cancel-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: #45a049;
+}
+
+.cancel-btn {
+    background-color: #ff4d4d;
+}
+
+.cancel-btn:hover {
+    background-color: #ff1a1a;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-toggle" id="menu-toggle-btn">
+        </div>
+        <aside class="hide">
+            <div class="top">
+                <div class="logo">
+                    <h2>EGA<span class="danger">TOR</span></h2>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="user_dash.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="orders.html">
+                    <i class='bx bx-package'></i>
+                    <h3>My Orders</h3>
+                </a>
+                <a href="wishlist.html">
+                    <i class='bx bx-heart'></i>
+                    <h3>Wishlist</h3>
+                </a>
+                <a href="profile.html">
+                    <i class='bx bx-user'></i>
+                    <h3>Profile</h3>
+                </a>
+                <a href="cart.html">
+                    <i class='bx bx-cart'></i>
+                    <h3>Cart</h3>
+                </a>
+                <a href="logout.html" class="active">
+                    <i class='bx bx-log-out'></i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Section -->
+        <main>
+            <h1>Are You Sure You Want to Logout?</h1>
+
+            <!-- Logout Confirmation Message -->
+            <div class="logout-confirmation">
+                <p>You are about to log out from your account. Please confirm.</p>
+                <div class="buttons">
+                    <a href="login.html" class="logout-btn">Yes, Logout</a>
+                    <a href="user_dash.html" class="cancel-btn">Cancel</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Section (Profile Updates) -->
+        <div class="right">
+            <div class="top">
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Alina</b></p>
+                        <small class="text-muted">Customer</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="dp.jpeg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+// Optional: Add confirmation before logout
+document.querySelector('.logout-btn').addEventListener('click', function(e) {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (!confirmLogout) {
+        e.preventDefault(); // Prevent the default action (redirect)
+    }
+});
+
+    </script>
+</body>
+</html>

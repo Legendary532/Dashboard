@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>User Dashboard</title>
+
+    <style>
+        /* Order Status Styles */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.status.completed {
+    background-color: #28a745;  /* Green for completed orders */
+    color: white;
+}
+
+.status.pending {
+    background-color: #ffc107;  /* Yellow for pending orders */
+    color: black;
+}
+
+.status.processing {
+    background-color: #17a2b8;  /* Blue for processing orders */
+    color: white;
+}
+
+.status.cancelled {
+    background-color: #dc3545;  /* Red for cancelled orders */
+    color: white;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f8f9fa;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar and Menu */
+.menu-toggle {
+    display: block;
+    font-size: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Styling for the Show All Orders link */
+a.show-all {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+}
+
+a.show-all:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-toggle" id="menu-toggle-btn">
+        </div>
+        <aside class="hide">
+            <div class="top">
+                <div class="logo">
+                    <h2>EGA<span class="danger">TOR</span></h2>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="user_dash.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="orders.html" class="active">
+                    <i class='bx bx-package'></i>
+                    <h3>My Orders</h3>
+                </a>
+                <a href="wishlist.html">
+                    <i class='bx bx-heart'></i>
+                    <h3>Wishlist</h3>
+                </a>
+                <a href="profile.html">
+                    <i class='bx bx-user'></i>
+                    <h3>Profile</h3>
+                </a>
+                <a href="cart.html">
+                    <i class='bx bx-cart'></i>
+                    <h3>Cart</h3>
+                </a>
+                <a href="logout.html">
+                    <i class='bx bx-log-out'></i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- Main Content Section -->
+        <main>
+            <h1>My Orders</h1>
+            <div class="order-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Order Number</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Order 1 -->
+                        <tr>
+                            <td>Night Lion Tech GPS Drone</td>
+                            <td>#14532</td>
+                            <td>$499</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                        <!-- Order 2 -->
+                        <tr>
+                            <td>Smartwatch Series 7</td>
+                            <td>#14533</td>
+                            <td>$199</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                        <!-- Order 3 -->
+                        <tr>
+                            <td>Wireless Bluetooth Headphones</td>
+                            <td>#14534</td>
+                            <td>$89</td>
+                            <td><span class="status processing">Processing</span></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                        <!-- Order 4 -->
+                        <tr>
+                            <td>Portable Power Bank 10,000mAh</td>
+                            <td>#14535</td>
+                            <td>$39</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                        <!-- Order 5 -->
+                        <tr>
+                            <td>Leather Wallet</td>
+                            <td>#14536</td>
+                            <td>$29</td>
+                            <td><span class="status cancelled">Cancelled</span></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Show All Orders</a>
+            </div>
+        </main>
+
+        <!-- Right Section (Profile and Updates) -->
+        <div class="right">
+            <div class="top">
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Alina</b></p>
+                        <small class="text-muted">Customer</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="dp.jpeg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-updates">
+                <h2>Recent Activity</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="m3.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> purchased a Night lion tech GPS drone.</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="m1.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>John Doe</b> added a Smart Watch to their wishlist.</p>
+                            <small class="text-muted">15 Minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Grab necessary DOM elements
+const menuToggleBtn = document.getElementById('menu-toggle-btn');
+const closeBtn = document.getElementById('close-btn');
+const sidebar = document.querySelector('aside');
+const container = document.querySelector('.container');
+
+// Open the sidebar when the menu button is clicked
+menuToggleBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');  // Show the sidebar
+    container.classList.add('shift');  // Shift main content to the right when sidebar is open
+});
+
+// Close the sidebar when the close button inside the sidebar is clicked
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');  // Hide the sidebar
+    container.classList.remove('shift');  // Reset the main content position
+});
+
+// Optional: If you want to close the sidebar when clicking outside of it, you can add this
+document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !menuToggleBtn.contains(e.target)) {
+        sidebar.classList.remove('open');
+        container.classList.remove('shift');
+    }
+});
+
+    </script>
+</body>
+</html>

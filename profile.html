@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>User Dashboard</title>
+    <style>
+        /* Profile Page Styles */
+.profile-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.edit-profile-form {
+    margin-top: 30px;
+}
+
+.edit-profile-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.edit-profile-form input,
+.edit-profile-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.edit-profile-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.edit-profile-form button:hover {
+    background-color: #45a049;
+}
+
+/* Right Section Styling */
+.recent-updates {
+    margin-top: 20px;
+}
+
+.update {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.update .profile-photo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.update .message {
+    margin-left: 15px;
+}
+
+.update .message small {
+    font-size: 12px;
+    color: #888;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-toggle" id="menu-toggle-btn">
+        </div>
+        <aside class="hide">
+            <div class="top">
+                <div class="logo">
+                    <h2>EGA<span class="danger">TOR</span></h2>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="user_dash.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="orders.html">
+                    <i class='bx bx-package'></i>
+                    <h3>My Orders</h3>
+                </a>
+                <a href="wishlist.html">
+                    <i class='bx bx-heart'></i>
+                    <h3>Wishlist</h3>
+                </a>
+                <a href="profile.html" class="active">
+                    <i class='bx bx-user'></i>
+                    <h3>Profile</h3>
+                </a>
+                <a href="cart.html">
+                    <i class='bx bx-cart'></i>
+                    <h3>Cart</h3>
+                </a>
+                <a href="logout.html">
+                    <i class='bx bx-log-out'></i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Section -->
+        <main>
+            <h1>User Profile</h1>
+
+            <!-- Profile Information Section -->
+            <div class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-photo">
+                        <img src="dp.jpeg" alt="Profile Photo">
+                    </div>
+                    <div class="profile-info">
+                        <h2>Alina</h2>
+                        <p>Email: alina@example.com</p>
+                        <p>Phone: +123 456 7890</p>
+                        <p>Address: 123 Street, City, Country</p>
+                    </div>
+                </div>
+
+                <!-- Edit Profile Form -->
+                <h3>Edit Profile</h3>
+                <form class="edit-profile-form">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="Alina" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="alina@example.com" required>
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" value="+123 456 7890" required>
+
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" required>123 Street, City, Country</textarea>
+
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Right Section (Profile Updates) -->
+        <div class="right">
+            <div class="top">
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Alina</b></p>
+                        <small class="text-muted">Customer</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="dp.jpeg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-updates">
+                <h2>Recent Activity</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="m3.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> updated their profile.</p>
+                            <small class="text-muted">5 Minutes Ago</small>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="m1.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>John Doe</b> changed their address.</p>
+                            <small class="text-muted">15 Minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+// Grab necessary DOM elements
+const menuToggleBtn = document.getElementById('menu-toggle-btn');
+const closeBtn = document.getElementById('close-btn');
+const sidebar = document.querySelector('aside');
+const container = document.querySelector('.container');
+
+// Open the sidebar when the menu button is clicked
+menuToggleBtn.addEventListener('click', () => {
+    sidebar.classList.add('open');  // Show the sidebar
+    container.classList.add('shift');  // Shift main content to the right when sidebar is open
+});
+
+// Close the sidebar when the close button inside the sidebar is clicked
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');  // Hide the sidebar
+    container.classList.remove('shift');  // Reset the main content position
+});
+
+// Optional: If you want to close the sidebar when clicking outside of it, you can add this
+document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !menuToggleBtn.contains(e.target)) {
+        sidebar.classList.remove('open');
+        container.classList.remove('shift');
+    }
+});
+
+    </script>
+</body>
+</html>
